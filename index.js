@@ -14,8 +14,8 @@ refs = {
 
 }
 
-let cheket = true;
-let colorId = null
+let isActive = true;
+let timerId = null
 
 
 const randomIntegerFromInterval = (min, max) => {
@@ -24,10 +24,10 @@ const randomIntegerFromInterval = (min, max) => {
 
 const onClickColorStart = () => {
      
-    if (cheket) {
-        cheket = false;
+    if (isActive) {
+        isActive = false;
 
-        colorId = setInterval(() => {
+        timerId = setInterval(() => {
               
             let randomColorLength = randomIntegerFromInterval(0, colors.length - 1);
 
@@ -40,8 +40,8 @@ const onClickColorStart = () => {
 }
 
 const onClickColorStop = () => {
-cheket = true
-clearInterval(colorId)
+isActive= true
+clearInterval(timerId)
 
 }
 
@@ -50,6 +50,7 @@ refs.btnStop.addEventListener('click', onClickColorStop);
 
 
 
+     
      
 
    
